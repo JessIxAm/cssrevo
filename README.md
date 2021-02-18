@@ -7,7 +7,7 @@ no copyrights.
 
 
 -- Free Trial Button in the upper nav + search button
-#0c21d2
+
 #a7a4ac
 #e4e6eb
 #060c14

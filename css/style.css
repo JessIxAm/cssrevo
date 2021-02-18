@@ -1,13 +1,183 @@
-html{
-     font-family: 'Nunito', sans-serif;
-     background-color: #f2f5fa;
-     color: #060c14;
+/** COMMON START**/
+:root{
+     --color-primary:#f2f4fa;
+     --color-secondary:#00d9ff;
+     --color-accent: #1fad80;
+     --color-border: #93acce;
+     
+
+     --bg-color-dark: #172637;
+     --bg-color-code: #2f4b64;
 }
 
+html{
+     font-family: 'Open Sans', sans-serif;
+     background-color: var(--bg-color-dark);
+     color: var(--color-primary);
+
+     overflow-x: hidden;
+}
+body{
+     font-size: .9rem;
+     font-weight: 300;
+}
+
+#wrapper{
+     min-height: 100vh;
+
+     position: relative;
+     padding-top: 4rem;
+     margin:0 auto;
+     
+}
+/**COMMON END**/
+
+
+
+#menu-up{
+     position: fixed;
+     top:0;
+     left:0;
+     right: 0;
+     height: 80px;
+
+     justify-content: space-between;
+     padding: 1rem .5rem;
+
+     background-color: var(--bg-color-dark);
+     z-index: 100;
+     border-bottom: .3px solid var(--color-border);
+}
+#logo-container{
+     position: relative;
+}
+
+/** menu toggler starts **/
+label{
+     /*   background-color: black;*/
+     width: 30px;
+     height: 30px;
+
+     position: relative;  
+}
+span.hbg{
+     height: 3px;
+     width: 24px;
+     background-color:var(--color-primary);
+
+     position: relative;
+     transition: transform .5s ease-in;
+}
+span.hbg::before,
+span.hbg::after{
+     content: '';
+     position: absolute;
+     background-color: inherit;
+     height: inherit;
+     width: inherit;
+
+     transition: transform .5s ease-in;
+}
+span.hbg::before{
+     top: -8px;
+}
+span.hbg::after{
+     top:8px;
+}
+
+input[type="checkbox"]{
+     width: 30px;
+     height: 30px;
+
+     position:absolute;
+     top: 0px;
+     left: 0px;
+}
+
+input[type="checkbox"]:checked ~ #navbar{
+     opacity: 1;
+     display: block;
+}
+input[type="checkbox"]:checked ~ #menu-up .hbg{
+     background-color: var(--color-secondary);
+
+     transform: rotate(45deg);
+}
+input[type="checkbox"]:checked ~ #menu-up .hbg::before,
+input[type="checkbox"]:checked ~ #menu-up .hbg::after{
+     transform: rotate(90deg);
+     top:0;
+}
+
+/** menu toggler ends **/
+
+
+/** logo starts **/
+.logo{
+}
+.logo h2{
+     font-weight: 900;
+     font-size: 1.2rem;
+     color: var(--color-primary);
+}
+.logo h2 span{
+     font-size: 1.5rem;
+     color: var(--color-secondary);
+
+}
+/** logo ends **/
+
+/**button starts**/
+.button-container #search{
+     display: none;
+}
 button{
-     width: 200px;
-     white-space: nowrap;
-     background-color: #198865;
-     padding:1rem .5rem;
-     color: #f2f5fa ;
+     background-color: var(--color-accent);
+     padding:.5rem 1rem;
+     color: var(--color-primary) ;
+     letter-spacing: 1px;
+     font-weight: 800;
+     font-size: 1rem;
+
+     transition: all .3s ease-in;
+}
+button:hover,
+button:focus{
+     background-color: var(--color-primary);
+     color: var(--color-accent);
+}
+/** button ends **/
+
+/**side menu starts**/
+#navbar{
+     background-color: var(--bg-color-dark);
+     min-height: 100vh;
+     width: 20%;
+     min-width: 200px;
+
+     position: fixed;
+     top:0;
+     left:0;
+     right: 0;
+
+     opacity: 0;
+
+     border-right: 1px solid var(--color-border) ;
+     padding: 5rem 0 1rem;
+
+     font-size: .8rem;
+}
+/**side menu ends**/
+
+
+
+
+#main-doc{
+     padding-top:3rem ;
+}
+
+
+
+#main-section-container{
+     padding: 0 1rem;
 }
