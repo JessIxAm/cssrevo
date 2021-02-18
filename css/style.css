@@ -1,0 +1,13 @@
+html{
+     font-family: 'Nunito', sans-serif;
+     background-color: #f2f5fa;
+     color: #060c14;
+}
+
+button{
+     width: 200px;
+     white-space: nowrap;
+     background-color: #198865;
+     padding:1rem .5rem;
+     color: #f2f5fa ;
+}
