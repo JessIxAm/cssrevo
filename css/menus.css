@@ -1,0 +1,240 @@
+/**MENU UPSIDE START**/
+#menu-up{
+     position: fixed;
+     top:0;
+     left:0;
+     right: 0;
+     height: 80px;
+
+     justify-content: space-between;
+     padding: 1rem .5rem;
+
+     background-color: var(--bg-color-dark);
+     z-index: 100;
+     border-bottom: .3px solid var(--color-border);
+}
+#logo-container{
+     position: relative;
+}
+
+     /*? menu toggler starts **/
+     label{
+          /*   background-color: black;*/
+          width: 30px;
+          height: 30px;
+          cursor: pointer;
+          position: relative;  
+     }
+     span.hbg{
+          height: 3px;
+          width: 24px;
+          background-color:var(--color-primary);
+
+          position: relative;
+          transition: transform .5s ease-in;
+     }
+     span.hbg::before,
+     span.hbg::after{
+          content: '';
+          position: absolute;
+          background-color: inherit;
+          height: inherit;
+          width: inherit;
+
+          transition: transform .5s ease-in;
+     }
+     span.hbg::before{
+          top: -8px;
+     }
+     span.hbg::after{
+          top:8px;
+     }
+
+     input[type="checkbox"]{
+          position:absolute;
+          top: -10000px;
+          left: 0px;
+     }
+
+     input[type="checkbox"]:checked ~ #navbar{
+          /*todo see the navbar styling in the [side menu] section below */
+          display: block;
+          /*position: relative;
+          align-self: flex-start;
+          width: 20%;
+          min-width: 200px;
+          max-width: 300px;*/
+          /*transform: translate3d(50%, 0, 0);    */
+     }
+     input[type="checkbox"]:checked ~ #menu-up .hbg{
+          background-color: var(--color-secondary);
+
+          transform: rotate(45deg);
+     }
+     input[type="checkbox"]:checked ~ #menu-up .hbg::before,
+     input[type="checkbox"]:checked ~ #menu-up .hbg::after{
+          transform: rotate(90deg);
+          top:0;
+     }
+     /*? menu toggler ends **/
+
+     /*? LOGO starts **/
+     .logo{
+     }
+     .logo h2{
+          font-weight: 900;
+          font-size: 1.2rem;
+          color: var(--color-primary);
+     }
+     .logo h2 span{
+          font-size: 1.5rem;
+          color: var(--color-secondary);
+
+     }
+     /*? LOGO ends **/
+
+     /*? BUTTON starts**/
+     .button-container #search{
+          display: none;
+     }
+     button{
+          background-color: var(--color-accent);
+          padding:.5rem 1rem;
+          color: var(--color-primary) ;
+          letter-spacing: 1px;
+          font-weight: 800;
+          font-size: 1rem;
+
+          transition: all .3s ease-in;
+     }
+     button:hover,
+     button:focus{
+          background-color: var(--color-primary);
+          color: var(--color-accent);
+     }
+     /*? button ends **/
+
+/** MENU UPSIDE ENDS*/
+/**side menu starts**/
+#navbar{
+     overflow-y: auto;
+
+     background-color: var(--bg-color-dark);
+     height: 100vh;
+     width: 20%;
+     min-width: 200px;
+     max-width: 300px;
+
+     position: fixed;
+     top:0;
+     left:0;
+     right: 0px;
+
+     display: none;
+
+     border-right: 1px solid var(--color-border) ;
+     border-bottom: 1px solid var(--color-border);
+     padding: 5rem 1rem 1rem;
+
+     font-size: .8rem;
+
+     /*! not working
+     transition: all .5s ease-in;
+     -webkit-transition: all .5s ease-in;
+     transform-origin: left center;
+     -webkit-transform-origin: left center;
+     animation-timing-function: 1s ease-in;
+     -webkit-animation-timing-function: 1s ease-in;
+      */
+}
+.search-container{
+     /* display: flex-block; */
+     width: 100%;
+     background-color: #34465a;
+     margin: .5rem 0 1rem;
+     height: 34px;
+}
+     .search-container input{
+          width: 85%;
+          cursor: text;
+          padding: 0 .3rem;
+     }
+     .search-container input::placeholder,
+     .search-container ::-webkit-input-placeholder{
+          color: var(--color-primary);
+          font-size: .9rem;
+     }
+     .search-container .search{
+          cursor: pointer;
+
+     }
+#navbar  ul > li{
+     justify-content: flex-start;
+}
+#navbar li h1{
+     padding: 1rem 0; 
+     justify-content: flex-start;
+}
+#navbar li h1:hover,
+#navbar li h1:focus,
+#navbar li h1:active{
+     color: var(--color-secondary);
+}
+
+#navbar li h1 a{
+     margin-left:1rem;
+}
+
+#navbar .submenu{
+     border-left: .3px solid var(--color-border);
+     background-color: rgba(0, 139, 139, 0.068);
+     padding-left: -2rem;
+     width: 80%;
+     margin-left: auto;
+     line-height: 2;
+}
+.submenu a:hover{
+     border-bottom: 1px solid var(--color-primary);
+     font-weight: 400;
+}
+
+/**side menu ends**/
+
+/**MAIN-DOC-PADDING TWEAK START*/
+#main-doc-padding{
+     display: none;
+}
+/**MAIN-DOC-PADDING TWEAK END */
+
+/*! FOR TABLETS AND BIGGER SCREEN */
+@media screen and (min-width: 700px){
+     #wrapper{
+          background-color: darkcyan;
+     }
+     /*making the sidemenu always visible*/
+     #navbar{
+          display: block;
+          position: fixed;
+     }
+     /*pushing main-doc right to the new fixed menu*/
+     #main-doc-padding{
+          display: block;
+          position: relative;
+          z-index: -1;
+          flex-basis: 300px;
+          max-width: calc(300px + 2rem);
+          min-height: 2px;
+
+          /* background-color: transparent; */
+     }
+     /*making the main-doc section more readable*/
+     #main-doc{
+          width: 80%;
+          max-width: 900px;
+     }
+     /*the hamburger menu is  no more visible*/
+
+     /*the search div in the sidemenu is no more visible*/
+
+     /*the search div appears in the upmenu next to the free trial button*/
+}
