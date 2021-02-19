@@ -7,9 +7,13 @@ no copyrights.
 
 
 -- Free Trial Button in the upper nav + search button
-
+color palette
 #a7a4ac
 #e4e6eb
 #060c14
 #198865
 #f2f5fa
+#0c21d2
+
+<!--todo -->
+#essayer d ajouter l'url complet pour chaque Anchor

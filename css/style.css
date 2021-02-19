@@ -1,7 +1,7 @@
 /** COMMON START**/
 :root{
      --color-primary:#f2f4fa;
-     --color-secondary:#00d9ff;
+     --color-secondary: #ff09ff;
      --color-accent: #1fad80;
      --color-border: #93acce;
      
@@ -19,7 +19,7 @@ html{
 }
 body{
      font-size: .9rem;
-     font-weight: 300;
+     font-weight: 400;
 
 /*  -webkit-font-smoothing: antialiased;
      -moz-osx-font-smoothing: grayscale;*/
@@ -33,13 +33,14 @@ body{
      margin:0 auto;
      
 }
+.anchor{
+     scroll-margin-top: 100px;
+}
+
+
 /**COMMON END**/
 
-
-
-
-
-
+/**MAIN DOC START*/
 #main-doc{
      padding-top:3rem ;
      width: 100%;
@@ -48,8 +49,155 @@ body{
      max-width: 900px;
 }
 
-
-
 #main-section-container{
      padding: 0 1rem;
+}
+/**text-formatting start**/
+.main-section{
+     margin-bottom: 1.5rem;
+}
+.main-section header h1{
+     font-size: calc(1.7rem + 1vw);
+     margin-bottom: 1rem;
+} 
+
+.main-section header h1:focus,
+.main-section header h1:active{
+     color:var(--color-secondary)
+}
+h3{
+     font-family: 'Alegreya', serif;
+     text-align: left;
+     background-color: #008b8b11;
+     width: 100%;
+     font-style: calc(1.2rem + .5vw);
+     margin-bottom: .6rem;
+     padding: .5rem 0;
+     
+}
+h3 ~ p{
+     margin-bottom: .5rem;
+     text-indent: 1rem;
+}
+.main-section ul,
+.main-section h4{
+     align-self: flex-start;
+     margin-bottom: .5rem;
+}
+.main-section ul li{
+     list-style-type: circle;
+     margin-left: 2rem;
+     padding: .2rem .5rem;
+     background-color: rgba(221, 221, 144, 0.76);
+     margin: 2px 0;
+}
+/*?fixing an annoying problem with ul on devices under 700px*/
+/*todo really don't understand why i need it. Hey future me, can you please help me? ^­­_^*/
+     @media screen and (max-width:699.5px){
+          .main-section ul{
+               
+               margin-left: 2rem;
+          }
+     }
+/*?fix end*/
+.main-section .li-green{
+     background-color: #d4f1e1;
+     color:#155f38;
+}
+.main-section .li-red{
+     background-color: #f6e2e1;
+     color: #6d3937;
+}
+
+/**text-formatting end**/
+
+/**CODE DIV*/
+code.code{
+     font-family: 'Source Code Pro', monospace;
+     background-color: var(--bg-color-code);
+     color: var(--color-primary);
+     border-radius: 5px;
+     align-self: flex-start;
+     width: 100%;
+     margin: 1rem 0;
+}
+.code-title{
+     background-color:#34465a ;
+     font-weight: 600;
+     text-align: left;
+     width: 100%;
+     padding: .5rem 1rem;
+     margin-bottom: .5rem;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+
+     border-left: 3px solid var(--color-border);
+}
+.code-body{
+     width: 100%;
+     padding: .5rem 1rem;
+     margin-bottom: .5rem;
+}
+.color-red{
+     color: tomato;
+}
+/**CODE DIV END**/
+/**MAIN DOC END*/
+
+/**FOOTER **/
+footer#footer{
+     
+     justify-content: space-between; 
+     height: 80px;
+     width: 100%;
+     padding: 1rem;
+     background-color: #253c5723;
+}
+.footer-item a{
+     font-style: italic;
+     font-weight: bold;
+}
+.footer-item a:hover{
+     color:var(--color-secondary);
+}
+.footer-item.social{
+     width: 30%;
+     justify-content: space-between;
+}
+
+@media screen and (max-width:780px){
+     footer#footer{
+          flex-direction:column;
+          height: max-content;
+     }
+     #footer .footer-item{
+          height:40px;
+          width: 100%;
+          text-align:center;
+          padding:.2rem;
+     }
+     #footer .footer-item.social{
+          width: 40%;
+          min-width: 180px;
+          margin:0 auto;
+     }
+
+}
+
+/**Extra**/
+/**button to go up*/
+#goUp{
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     background-color:var(--color-secondary);
+     opacity: .2;
+     cursor: pointer;
+
+     position: fixed;
+     bottom: 10%;
+     right:1%;
+}
+#goUp:hover{
+     opacity: 1;
 }

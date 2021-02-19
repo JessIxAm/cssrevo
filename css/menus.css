@@ -191,7 +191,7 @@
 
 #navbar .submenu{
      border-left: .3px solid var(--color-border);
-     background-color: rgba(0, 139, 139, 0.068);
+     background-color: #008b8b11;
      
      width: 80%;
      margin-left: auto;
