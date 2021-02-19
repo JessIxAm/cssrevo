@@ -78,7 +78,7 @@
      }
      /*? menu toggler ends **/
 
-     /*? LOGO starts **/
+     /*? LOGO  CONTAINER starts **/
      .logo{
      }
      .logo h2{
@@ -91,13 +91,14 @@
           color: var(--color-secondary);
 
      }
-     /*? LOGO ends **/
+     /*? LOGO CONTAINER ends **/
 
-     /*? BUTTON starts**/
-     .button-container #search{
+     /*? BUTTON CONTAINER starts**/
+     .button-container#search{
           display: none;
      }
-     button{
+
+     button#cta{
           background-color: var(--color-accent);
           padding:.5rem 1rem;
           color: var(--color-primary) ;
@@ -107,12 +108,13 @@
 
           transition: all .3s ease-in;
      }
-     button:hover,
-     button:focus{
+     
+     button#cta:hover,
+     button#cta:focus{
           background-color: var(--color-primary);
           color: var(--color-accent);
      }
-     /*? button ends **/
+     /*? BUTTON CONTAINER ends **/
 
 /** MENU UPSIDE ENDS*/
 /**side menu starts**/
@@ -164,9 +166,11 @@
           color: var(--color-primary);
           font-size: .9rem;
      }
+     .search-container#search{
+          display: none;
+     }
      .search-container .search{
           cursor: pointer;
-
      }
 #navbar  ul > li{
      justify-content: flex-start;
@@ -188,7 +192,7 @@
 #navbar .submenu{
      border-left: .3px solid var(--color-border);
      background-color: rgba(0, 139, 139, 0.068);
-     padding-left: -2rem;
+     
      width: 80%;
      margin-left: auto;
      line-height: 2;
@@ -209,14 +213,14 @@
 /*! FOR TABLETS AND BIGGER SCREEN */
 @media screen and (min-width: 700px){
      #wrapper{
-          background-color: darkcyan;
+
      }
-     /*making the sidemenu always visible*/
+     /**making the sidemenu always visible*/
      #navbar{
           display: block;
           position: fixed;
      }
-     /*pushing main-doc right to the new fixed menu*/
+     /**pushing main-doc right to the new fixed menu*/
      #main-doc-padding{
           display: block;
           position: relative;
@@ -227,14 +231,86 @@
 
           /* background-color: transparent; */
      }
-     /*making the main-doc section more readable*/
+     /**making the main-doc section more readable*/
      #main-doc{
           width: 80%;
           max-width: 900px;
      }
-     /*the hamburger menu is  no more visible*/
+     /**the hamburger menu is  no more visible*/
+     #logo-container label.flex{
+          display: none;
+     }
+     /**the search div in the sidemenu is no more visible*/
+     .search-container#li-search{
+          display: none;
+     }
 
-     /*the search div in the sidemenu is no more visible*/
+     /*positioning element in the menu-up*/
+     /*UPMENU*/
+     #menu-up{
+          justify-content: flex-start;
+     }
+     #logo-container{
+          height: 40px;
+          justify-content: flex-start;
+          width: calc(20% - .5rem);
+          min-width: calc(200px - .5rem);
+          max-width: calc(300px - .5rem);
 
-     /*the search div appears in the upmenu next to the free trial button*/
+     }
+     
+     /*UPMENU BUTTON CONTAINER*/
+     .button-container{
+          justify-content: space-between;
+          width: 80%;
+     /*     max-width: 900px !important;*/
+          flex-grow: 100;
+
+          
+     }
+
+     /*the search div appears in the upmenu BUTTON CONTAINER next to the free trial button*/
+     .search-container#search{
+          display: flex;
+          flex-basis: 300px !important;
+          flex-shrink: 0;
+          height: 40px;
+          margin: 0;
+     
+     }
+     #search input{
+          padding: .5rem 1rem;
+          font-size: 1rem;
+
+     }
+     .search-container#search input::placeholder,
+     .search-container#search ::-webkit-input-placeholder{
+          font-size: 1rem; 
+     }
+     
+     /*the free trial button is more appealing:)*/
+     button#cta{
+          flex-shrink: 0;
+          height: 40px;
+          min-width: 150px ;
+          padding:.5rem 1rem;
+          color: var(--color-primary) ;
+          letter-spacing: 1px;
+          font-weight: 800;
+          font-size: 1rem;
+          
+     }
+     /*todo rebuild the logo to make it more responsive*/
+     #logo-container h2{
+          font-size: 2rem;
+          justify-self: center;
+          align-self: center;
+     }
+     #logo-container h2 span{
+          font-size: 3rem;
+     }
 }
+
+
+
+
